@@ -1,0 +1,22 @@
+﻿@model Category
+
+@{
+    Layout = "~/Views/Shared/_MongoLayout.cshtml";
+    ViewData["Title"] = "UpdateCategory";
+}
+
+<br />
+<br />
+<div class="container">
+    <h3>Kategori Güncelle</h3>
+    <br />
+    <form method="post">
+        <label>Kategori ID</label>
+        <input type="text" asp-for="CategoryID" disabled class="form-control" />
+        <br />
+        <label>Kategori Adı</label>
+        <input type="text" asp-for="CategoryName" class="form-control" placeholder="Kategori Adı" />
+        <br />
+        <button class="btn btn-outline-dark">Güncelle</button>
+    </form>
+</div>

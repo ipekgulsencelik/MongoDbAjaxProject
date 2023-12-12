@@ -1,0 +1,40 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MongoLayout.cshtml";
+    int count = 0;
+}
+
+<br />
+<br />
+<div class="container">
+    <h3>Ürün Listesi</h3>
+    <br />
+    <table class="table table-borderless">
+        <tr>
+            <th>#</th>
+            <th>Ürün ID</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Fiyat</th>
+            <th>Ürün Stok</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th>@count</th>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.Price ₺</td>
+                <td>@item.Stock</td>
+                <td><a asp-action="DeleteProduct" asp-route-id="@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a asp-action="UpdateProduct" asp-route-id="@item.ProductID" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a asp-action="CreateProduct" class="btn btn-outline-primary">Yeni Ürün Ekle</a>
+</div>

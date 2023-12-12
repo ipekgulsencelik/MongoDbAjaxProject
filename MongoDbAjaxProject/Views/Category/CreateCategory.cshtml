@@ -1,0 +1,19 @@
+﻿@model Category
+
+@{
+    Layout = "~/Views/Shared/_MongoLayout.cshtml";
+    ViewData["Title"] = "CreateCategory";
+}
+
+<br />
+<br />
+<div class="container">    
+    <h3>Yeni Kategori Oluştur</h3>
+    <br />
+    <form method="post">
+        <label>Kategori Adı</label>
+        <input type="text" asp-for="CategoryName" class="form-control" placeholder="Kategori Adı" required />
+        <br />
+        <button class="btn btn-primary">Kaydet</button>
+    </form>
+</div>
